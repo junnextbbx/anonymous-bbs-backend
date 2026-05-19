@@ -18,9 +18,14 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Anonymous BBS API", version="0.1.0", lifespan=lifespan)
 
+origins = [
+    "http://localhost:5173",  # ローカル開発
+    "https://anonymous-bbs.vercel.app",  # Vercel 本番
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # Vite dev server
+    allow_origins=origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
