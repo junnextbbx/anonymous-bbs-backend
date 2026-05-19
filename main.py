@@ -20,7 +20,7 @@ app = FastAPI(title="Anonymous BBS API", version="0.1.0", lifespan=lifespan)
 
 origins = [
     "http://localhost:5173",  # ローカル開発
-    "https://anonymous-bbs.vercel.app",  # Vercel 本番
+    "https://anonymous-board-roan.vercel.app",  # Vercel 本番
 ]
 
 app.add_middleware(
